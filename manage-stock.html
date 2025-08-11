@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Job Requirements - Employment Service System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Op.jpe" alt="Logo">
+                <h1>Employment Service System</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="add-job-type.html">Add Job Type</a>
+                <a href="manage-stock.html" class="active">Manage Job Requirements</a>
+                <a href="admin-login.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Manage Job Type Requirements</h2>
+            
+            <div class="form-container">
+                <form id="stockForm" action="manageStockAction.jsp" method="post">
+                    <div class="form-group">
+                        <label for="jobType">Select Job Type</label>
+                        <select name="bloodgroup" id="jobType" required>
+                            <option value="">Choose a job type</option>
+                            <option value="JAVA DEVELOPER">JAVA DEVELOPER</option>
+                            <option value="SQL DEVELOPER">SQL DEVELOPER</option>
+                            <option value="FULL STACK DEVELOPER">FULL STACK DEVELOPER</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="actionType">Increase/Decrease Job Type</label>
+                        <select name="incdec" id="actionType" required>
+                            <option value="inc">Increase</option>
+                            <option value="dec">Decrease</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="units">Units</label>
+                        <input type="number" name="units" id="units" placeholder="Enter Units" min="1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h3>Current Job Requirements</h3>
+                <div class="table-wrapper">
+                    <table id="jobTable">
+                        <thead>
+                            <tr>
+                                <th>Job Type</th>
+                                <th>Available Positions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jobTableBody">
+                            <!-- Data will be loaded via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/manage-stock.js"></script>
+</body>
+</html>
